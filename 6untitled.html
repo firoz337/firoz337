@@ -1,0 +1,187 @@
+
+
+
+<style>
+  
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aX8.ttf) format('truetype');
+}
+* {
+  box-sizing: inherit;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  background-color: #f2f2f2;
+  color: #47a3da;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+button {
+  background: #47a3da;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 1.5em;
+  width: 26rem;
+}
+button + button {
+  margin-top: 1rem;
+}
+button:hover,
+button:active {
+  background: #258ecd;
+}
+section {
+  background-color: #fff;
+  padding: 5rem;
+}
+aside {
+  background: #47a3da;
+  color: #262626;
+  padding: 5rem 3rem;
+}
+aside a {
+  color: #f0f0f0;
+}
+aside a:hover,
+aside a:focus {
+  color: #f0f0f0;
+}
+.container {
+  margin: 5rem auto;
+  max-width: 120rem;
+}
+.push-container {
+  margin-bottom: 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.push-container::before,
+.push-container::after {
+  content: '';
+  display: table;
+}
+.push-container::after {
+  clear: both;
+}
+/**
+ * 1. The value for `width` here should be the width of the sidebar PLUS any
+ *    additional spacing around it, such as margin
+ */
+.push-content {
+  float: left;
+  transition: width 0.3s ease-in-out;
+  white-space: normal;
+  width: 100%;
+}
+.push-content.open {
+  width: calc(100% - 260px);
+  /* 1 */
+}
+.push-content.open-on-load {
+  transition: none;
+  width: calc(100% - 260px);
+  /* 1 */
+}
+/**
+ * 1. Delay the height change until the push animation is complete
+ */
+.push-sidebar {
+  display: inline-block;
+  height: 50rem;
+  margin-left: 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition-delay: 0.3s;
+  /* 1 */
+  transition-property: max-height;
+  white-space: normal;
+  width: 24rem;
+}
+.push-sidebar.open,
+.push-sidebar.open-on-load {
+  max-height: 50rem;
+  transition: none;
+}
+  
+  
+</style>
+
+
+  
+
+ 
+
+<div class="container">
+  <div class="push-container">
+    <section id="js-push-content" class="push-content">
+      <h2>Content</h2>
+      <p>This is the content container that will push the sidebar out of view.</p>
+      <p>Refresh the page, or close and reopen the tab to see the state maintained.</p>
+      <button id="js-toggle-button">Show/Hide Sidebar</button>
+      <button onclick="localStorage.clear(); alert('localStorage has been cleared');">Clear localStorage</button>
+    </section>
+    <aside id="js-pushed-sidebar" class="push-sidebar">
+      <h2>Sidebar</h2>
+      <p>This is the content within the sidebar.</p>
+      <p><a href="#">Add some links!</a></p>
+    </aside>
+  </div>
+
+  <section>
+    <p>Some more content is down here.</p>
+  </section>
+</div>
+<script>
+
+
+console.clear();
+
+
+var $toggleButton   = $('#js-toggle-button');
+var $pushSelectors  = $('#js-push-content, #js-pushed-sidebar');
+ }
+  
+
+  
+
+
+  
+</script>
